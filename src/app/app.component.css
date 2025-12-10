@@ -1,0 +1,29 @@
+.topbar {
+  width: 100%;
+  background: #232b38;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+.topbar .nav-link {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.topbar .nav-link:hover {
+  background-color: #3b4657;
+  color: #fff;
+}
+
+.topbar .nav-link.active {
+  background-color: #0d6efd; /* Bootstrap primary */
+  color: #fff !important;
+}
+router-outlet {
+  display: block;
+  margin-top: 70px; /* adjust based on navbar height */
+}
