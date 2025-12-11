@@ -1,7 +1,7 @@
 <h2>Add Variant</h2>
 
 <form (ngSubmit)="submit()">
-  <label> Name </label>
+  <label> Name </label> <br> 
   <input
     name="code"
     [(ngModel)]="variant.Name"
@@ -9,7 +9,7 @@
     required
   /><br /><br />
   <label>Product</label>
-  <select required name="product" [(ngModel)]="variant.ProductID ">
+  <select   required name="product" [(ngModel)]="variant.ProductID"  class="form-select small-select"  >
     <option *ngFor="let p of products" [value]="p.ID">
       {{ p.ProductName }}
     </option>
