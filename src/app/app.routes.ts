@@ -4,6 +4,7 @@ import { VariantListComponent } from './components/variant-list/variant-list.com
 import { VariantOptionListComponent } from './components/variant-option-list/variant-option-list.component';
 
 export const routes: Routes = [
+     { path: '', redirectTo: '/products', pathMatch: 'full' },
     {path: 'products', component: ProductListComponent},
     {path: 'variants',component: VariantListComponent},
     {path: 'variantoptions',component: VariantOptionListComponent},
