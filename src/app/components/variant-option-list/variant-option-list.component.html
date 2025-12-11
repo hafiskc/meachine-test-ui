@@ -1,0 +1,46 @@
+<h2>Add Variant Option</h2>
+
+<form (ngSubmit)="submit()">
+  <label> Name </label> <br> 
+  <input
+    name="code"
+    [(ngModel)]="variantOption.Value"
+    placeholder="Name"
+    required
+  /><br /><br />
+  <label>Variant</label>
+  <select   required name="product" [(ngModel)]="variantOption.VariantID"  class="form-select small-select"  >
+    <option *ngFor="let v of variants" [value]="v.ID">
+      {{v.Name }}
+    </option>
+  </select>
+  <br /><br />
+
+  <button type="submit">Create</button>
+</form>
+<div class="container mt-4">
+
+  @if (variantOptions.length === 0) {
+    <div class="empty-state text-center">
+      <img src="https://cdn-icons-png.flaticon.com/512/4076/4076549.png" alt="No Data" class="empty-img" />
+      <h4 class="mt-3">No products found</h4>
+      <p class="text-muted">Click + Add to create your first product.</p>
+    </div>
+  } @else {
+
+    <div class="row">
+      @for(variantOptionItem of variantOptions; track variantOptionItem.ID) {
+        <div class="col-md-4">
+          <div class="card product-card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">{{ variantOptionItem.Value }}</h5>
+              <p class="card-text text-muted">Variant: {{ variantOptionItem.Variant.Name }}</p>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+
+  }
+
+</div>
